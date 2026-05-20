@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pratigya — Amrita Saripalli</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+      #project-hero { padding: 10rem 4rem 4rem; background: var(--void); }
+      .case-study-body { padding: 0 4rem 6rem; max-width: 1200px; margin: 0 auto; }
+      .phase-heading { font-family: var(--font-display); font-size: 2rem; color: var(--gold); margin: 4rem 0 1.5rem; border-bottom: 1px solid var(--fog); padding-bottom: 1rem; }
+  </style>
+</head>
+<body>
+
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Amrita Saripalli</a>
+    <ul class="nav-links">
+      <li><a href="index.html#projects">← Back to Work</a></li>
+    </ul>
+  </nav>
+
+  <section id="project-hero">
+    <p class="hero-eyebrow">Project 03</p>
+    <h1 class="hero-name" style="font-size: clamp(3rem, 6vw, 5rem);">Pratigya<br><span>Financial Literacy Platform</span></h1>
+    
+    <div class="project-meta" style="display: flex; gap: 3rem; margin-top: 3rem; text-align: left;">
+        <div><span><strong>Client</strong><br>Pratigya / Hack The Future</span></div>
+        <div><span><strong>Role</strong><br>UX Designer</span></div>
+        <div><span><strong>Timeline</strong><br>Fall 2025 - Spring 2026</span></div>
+        <div><span><strong>Platform</strong><br>Web Platform</span></div>
+    </div>
+  </section>
+
+  <main class="case-study-body">
+    <h2 class="phase-heading">The Challenge</h2>
+    <div class="project-desc">
+        <p><strong>Pratigya</strong> is a nonprofit trust working in Jharkhand, India, to ensure equitable access to education and well-being for marginalized communities. They faced a critical challenge: they lacked a centralized platform to support financial literacy education for rural women across diverse communities.</p>
+        <p>The existing process had no integrated system to track participant attendance, engagement, or provide real-time updates to administrators. Furthermore, the women participating lacked access to an interactive financial resource that adapted to their specific language, cultural context, and learning pace. The goal was to build an accessible, AI-driven educational platform that empowers these women with financial independence while giving Pratigya the tools to track progress and demonstrate effectiveness to their sponsors.</p>
+    </div>
+
+    <h2 class="phase-heading">Phase 1: Research & Scope Definition</h2>
+    <div class="project-desc">
+        <p>To understand what makes a successful online learning environment, I conducted secondary and comparative research analyzing platforms like Khan Academy and IXL. We needed to identify the key categories that support sustained educational engagement, rather than just delivering dry content.</p>
+    </div>
+    
+    <div class="findings-block">
+      <h4>// Key Research Outcomes</h4>
+      <ul class="findings-list">
+        <li><strong>Structural Learning:</strong> Information must be broken down into digestible "Lessons" (budgeting, saving, banking, digital payments) rather than overwhelming documents.</li>
+        <li><strong>Incentivized Engagement:</strong> Platforms like Khan Academy succeed because of their reward systems. We identified that integrating digital badges and certificates would be crucial for motivating our target users.</li>
+        <li><strong>Dual User Needs:</strong> The platform must serve two completely different user groups simultaneously: the rural women of Jharkhand (learning) and the Pratigya Administrators (tracking & funding).</li>
+      </ul>
+    </div>
+
+    <h2 class="phase-heading">Phase 2: Concept & Strategy</h2>
+    <div class="project-desc">
+        <p>Working alongside the project sponsor and utilizing collaborative tools like FigJam, we developed a system architecture that centered on an <strong>AI-driven, interactive platform</strong>. </p>
+        <p>For the primary users (rural women), the AI acts as a localized guide, adapting the content to their language and cultural context so financial concepts like digital payments feel practical and safe. For the secondary users (administrators), the AI processes engagement data into a dashboard, offering real-time progress tracking that is essential for reporting to partners and fundraisers.</p>
+    </div>
+
+    <div class="img-gallery cols-2">
+      <div class="img-item">
+        <img src="images/pratigya/research.jpg" alt="Secondary Research & Khan Academy Analysis">
+        <div class="img-caption">Comparative Research & Engagement Analysis</div>
+      </div>
+      <div class="img-item">
+        <img src="images/pratigya/figjam-board.jpg" alt="FigJam Ideation and Sponsor Mapping">
+        <div class="img-caption">FigJam Architecture & Stakeholder Mapping</div>
+      </div>
+    </div>
+
+    <h2 class="phase-heading">Phase 3: Wireframing & Usability</h2>
+    <div class="project-desc">
+        <p>Because the primary user base consists of rural women who may have varying levels of digital literacy, the interface had to be exceptionally intuitive. The wireframing phase focused heavily on clear visual hierarchies, easily recognizable iconography, and minimizing text-heavy instructional blocks in favor of interactive learning.</p>
+        <p><em>(More details on usability testing and high-fidelity iterations will be added as this ongoing Spring 2026 project progresses).</em></p>
+    </div>
+
+    <div class="outcome-callout">
+      <h4>Project Impact & Next Steps</h4>
+      <p>This project is currently moving from the wireframing phase into high-fidelity design and usability testing. By creating a system that adapts to localized languages and tracks real-time engagement, Pratigya will soon have a scalable tool to foster true financial independence for women in Jharkhand, while securing the data needed to maintain critical funding.</p>
+    </div>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
