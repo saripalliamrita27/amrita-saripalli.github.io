@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Innovatemap — Amrita Saripalli</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+      #project-hero { padding: 10rem 4rem 4rem; background: var(--void); }
+      .case-study-body { padding: 0 4rem 6rem; max-width: 1200px; margin: 0 auto; }
+      .phase-heading { font-family: var(--font-display); font-size: 2rem; color: var(--gold); margin: 4rem 0 1.5rem; border-bottom: 1px solid var(--fog); padding-bottom: 1rem; }
+  </style>
+</head>
+<body>
+
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Amrita Saripalli</a>
+    <ul class="nav-links">
+      <li><a href="index.html#projects">← Back to Work</a></li>
+    </ul>
+  </nav>
+
+  <section id="project-hero">
+    <p class="hero-eyebrow">Project 02</p>
+    <h1 class="hero-name" style="font-size: clamp(3rem, 6vw, 5rem);">Innovatemap<br><span>AI Email Marketing Redesign</span></h1>
+    
+    <div class="project-meta" style="display: flex; gap: 3rem; margin-top: 3rem; text-align: left;">
+        <div><span><strong>Client</strong><br>Innovatemap x Backstroke</span></div>
+        <div><span><strong>Role</strong><br>UX Research & Strategy</span></div>
+        <div><span><strong>Timeline</strong><br>Spring 2026</span></div>
+        <div><span><strong>Platform</strong><br>SaaS Web Product</span></div>
+    </div>
+  </section>
+
+  <main class="case-study-body">
+    <h2 class="phase-heading">The Challenge</h2>
+    <div class="project-desc">
+        <p>Innovatemap brought us in to define the UX vision for their client <strong>Backstroke</strong>, a 2024 tech startup that uses AI to generate email and SMS variations for eCommerce companies. </p>
+        <p>While competitors use AI simply as a copy-generation assistant, Backstroke saw an opportunity to shift the paradigm. The challenge was to reimagine email marketing where AI acts as the strategic architect of entire campaigns, while still solving the marketer's fear of losing brand voice and control.</p>
+    </div>
+
+    <h2 class="phase-heading">Phase 1: Market & User Research</h2>
+    <div class="project-desc">
+        <p>We conducted a deep competitive analysis of platforms like Mailchimp, Klaviyo, and Attentive. We discovered a core pattern: personalization is the primary direction across marketing platforms, but steep learning curves deter users.</p>
+        <p>Interviews with digital marketers and project managers revealed that the most significant pain points are <strong>repetitive tasks</strong> and the <strong>uncertainty of performance before hitting send</strong>. Marketers suffer from "decision paralysis" upfront because they don't know how an AI-generated campaign will actually perform.</p>
+    </div>
+
+    <h2 class="phase-heading">Phase 2: Blue-Sky Ideation</h2>
+    <div class="project-desc">
+        <p>Free from technical constraints, we engaged in blue-sky ideation and round-robin sketching. This generated six distinct concepts, including a synced calendar campaign generator, adaptive brand guidelines, and conversational SMS bots.</p>
+        <p>After testing these concepts with a Purdue marketing professor and the Backstroke CEO, we converged on the winning solution: an <strong>AI Campaign Simulation</strong> integrated with Adaptive Brand Guidelines.</p>
+    </div>
+
+    <div class="img-gallery cols-2">
+      <div class="img-item"><img src="images/innovatemap/round-robin.jpg" alt="Round Robin Sketches"><div class="img-caption">Round-Robin Sketching Concepts</div></div>
+      <div class="img-item"><img src="images/innovatemap/whiteboard-sim.jpg" alt="AI Simulation Whiteboard"><div class="img-caption">Initial AI Simulation Wireframe</div></div>
+    </div>
+
+    <h2 class="phase-heading">Phase 3: Prototyping the Simulation</h2>
+    <div class="project-desc">
+        <p>We built a mid-fidelity prototype and conducted Cognitive Walkthroughs with stakeholders to test the flow. We refined the transparency of the AI: users needed to see the real-time impact of AI suggestions and possess the ability to inline edit or reject them.</p>
+    </div>
+
+    <div class="outcome-callout">
+      <h4>The Final Concept: Predictive AI Simulation</h4>
+      <p>Built using the Untitled UI design system, the high-fidelity prototype allows marketers to set a campaign goal and watch the AI construct a multi-variant strategy.</p> 
+      <p>Crucially, before anything is deployed, the <strong>AI predicts the open rates, CTR, and revenue likelihood</strong>. The AI then provides "Suggested Changes" (e.g., replacing generic CTAs with first-person CTAs) and instantly shows how that change impacts the simulated analytics. This transforms the product from a blind content generator into an optimization engine, granting marketers total confidence.</p>
+    </div>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
