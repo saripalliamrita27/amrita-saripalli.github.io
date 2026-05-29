@@ -52,23 +52,22 @@ p strong {
 }
 
 /* ═══════════════════════════════════════════
-    CUSTOM CURSOR
+    STANDARD CURSOR DECORATORS
 ═══════════════════════════════════════════ */
 #cursor-dot {
-  position: fixed; top: 0; left: 0; z-index: 9999;
+  position: absolute; top: 0; left: 0; z-index: 99999;
   width: 10px; height: 10px; border-radius: 50%;
   background: var(--crimson);
   pointer-events: none;
   transform: translate(-50%,-50%);
-  transition: transform 0.1s, background 0.2s, width 0.2s, height 0.2s;
+  transition: width 0.2s, height 0.2s, background 0.2s;
 }
 #cursor-ring {
-  position: fixed; top: 0; left: 0; z-index: 9998;
+  position: absolute; top: 0; left: 0; z-index: 99998;
   width: 36px; height: 36px; border-radius: 50%;
   border: 1px solid rgba(231,76,60,0.6);
   pointer-events: none;
   transform: translate(-50%,-50%);
-  transition: transform 0.18s var(--ease-smooth), width 0.25s, height 0.25s, border-color 0.25s;
 }
 body:has(a:hover) #cursor-dot,
 body:has(button:hover) #cursor-dot { width: 16px; height: 16px; background: var(--ember); }
@@ -375,7 +374,7 @@ section { padding: 8rem 4rem; }
   position: fixed;
   inset: 0;
   background: #050403; 
-  z-index: 10000; 
+  z-index: 100000; /* Increased to ensure it covers wandering overlays safely */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -434,7 +433,7 @@ section { padding: 8rem 4rem; }
       0px -20px #dfbe5d, 4px -20px #fad773, 8px -20px #fad773, 12px -20px #dfbe5d,
       4px -16px #f4eae0, 8px -16px #f4eae0, 12px -16px #f4eae0,
       4px -12px #34527d, 8px -12px #4a72a8, 12px -12px #34527d,
-      0px -8px #34527d, 2px -8px #4a72a8, 4px -8px #4a72a8, 12px -8px #34527d, 16px -8px #34527d,
+      0px -8px #34527d, 2px -8px #4a72a8, 8px -8px #4a72a8, 12px -8px #34527d, 16px -8px #34527d,
       4px -4px #34527d, 8px -4px #34527d, 12px -4px #34527d,
       4px 0px #111, 12px 0px #111,
       0px 4px #111, 16px 4px #111;
@@ -487,11 +486,78 @@ section { padding: 8rem 4rem; }
   align-items: start;
 }
 
-.bio-panel .text-block p {
+.standard-about-box {
+  background: var(--void);
+  padding: 2.5rem;
+  border: 1px solid var(--panel);
+}
+
+.biography-content-text p {
   font-size: 1.25rem;
   line-height: 1.9;
-  color: var(--ash);
+  color: var(--canvas); 
   margin-bottom: 1.8rem;
+}
+
+.biography-content-text strong { color: var(--parchment); }
+.biography-content-text em { color: var(--gold); }
+
+/* 🌍 GLOBAL TELEPORTING SAFE LAYOUT ENGINE 🌍 */
+.global-patrol-leon {
+  width: 8px;
+  height: 8px;
+  position: absolute !important; 
+  z-index: 99999 !important;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(2.5);
+  transition: opacity 0.4s var(--ease-smooth);
+}
+
+.global-patrol-leon.visible-idle {
+  opacity: 1;
+  box-shadow:
+    2px -16px #dfbe5d, 4px -16px #dfbe5d, 6px -16px #dfbe5d,
+    2px -14px #fad773, 4px -14px #fad773, 6px -14px #dfbe5d,
+    2px -12px #f4eae0, 4px -12px #f4eae0,
+    2px -10px #4a72a8, 4px -10px #4a72a8, 6px -10px #34527d,
+    0px -8px #34527d, 2px -8px #4a72a8, 4px -8px #4a72a8, 6px -8px #34527d,
+    2px -6px #34527d, 4px -6px #34527d,
+    2px -4px #7c8da3, 4px -4px #7c8da3,
+    2px -2px #5a6b82, 4px -2px #5a6b82;
+}
+
+.global-patrol-leon.active-flash {
+  box-shadow:
+    2px -16px #dfbe5d, 4px -16px #dfbe5d, 6px -16px #dfbe5d,
+    2px -14px #fad773, 4px -14px #fad773, 6px -14px #dfbe5d,
+    2px -12px #f4eae0, 4px -12px #f4eae0,
+    2px -10px #4a72a8, 4px -10px #4a72a8, 6px -10px #34527d, 8px -10px #ff7643, 10px -10px #ffffff,
+    0px -8px #34527d, 2px -8px #4a72a8, 4px -8px #4a72a8, 6px -8px #34527d,
+    2px -6px #34527d, 4px -6px #34527d,
+    2px -4px #7c8da3, 4px -4px #7c8da3,
+    2px -2px #5a6b82, 4px -2px #5a6b82;
+}
+
+.global-patrol-leon::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 12px; 
+  width: 0px;
+  height: 40px;
+  background: linear-gradient(to right, rgba(250, 215, 115, 0.16) 0%, rgba(250, 215, 115, 0.04) 65%, transparent 100%);
+  clip-path: polygon(0% 42%, 0% 58%, 100% 100%, 100% 0%);
+  opacity: 0;
+  transform-origin: left center;
+  transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s;
+}
+
+.global-patrol-leon.active-flash::after {
+  width: 440px;
+  opacity: 1;
 }
 
 .clean-stats-row {
@@ -816,7 +882,7 @@ section { padding: 8rem 4rem; }
 }
 
 /* ═══════════════════════════════════════════
-    AUTOMATED FLASHLIGHT SCAN SYSTEM
+    AUTOMATED HOME PAGE HERO FLASHLIGHT SCAN SYSTEM
 ═══════════════════════════════════════════ */
 .hero-name-interactive-group {
   display: inline-block !important;
@@ -830,7 +896,7 @@ section { padding: 8rem 4rem; }
   display: block !important;
   margin: 0 !important;
   font-family: var(--font-display);
-  font-size: clamp(3.8rem, 8vw, 8rem) !important; /* Restored back completely to original huge size */
+  font-size: clamp(3.8rem, 8vw, 8rem) !important; 
   font-weight: 900;
   line-height: 1.0;
   color: var(--parchment);
@@ -847,29 +913,21 @@ section { padding: 8rem 4rem; }
   display: block !important;
   width: 8px;
   height: 8px;
-  
-  /* Positions Leon relative to the right edge of your big headline string */
   position: absolute !important;
-  left: 620px;  /* Incremented from 480px to safely clear the restored name width */
+  left: 620px;  
   bottom: 24px; 
   z-index: 9999 !important;
-  
   image-rendering: pixelated;
   image-rendering: crisp-edges;
   transform: scale(2.5); 
-  
   animation: leonPatrolScanner 5s steps(1) infinite !important;
 }
 
-/* Flashlight Vector Ray Overlay Container */
 .name-companion-leon::after {
   content: '';
   position: absolute;
-  
-  /* FIXED BEAM CONE COUPLING: Anchors light throw directly to Leon's hand pixel coordinate */
   top: -8px; 
   right: 6px; 
-  
   width: 0px;
   height: 35px;
   background: linear-gradient(to left, rgba(250, 215, 115, 0.45) 0%, rgba(250, 215, 115, 0.05) 75%, transparent 100%);
@@ -877,27 +935,18 @@ section { padding: 8rem 4rem; }
   opacity: 0;
   transform-origin: right center;
   pointer-events: none;
-  
   animation: flashlightBeamPatrol 5s ease-in-out infinite !important;
 }
 
-/* ═══════════════════════════════════════════
-    TIMELINE SEQUENCES (THE PATROL LOOP)
-═══════════════════════════════════════════ */
 @keyframes leonPatrolScanner {
-  /* 0s - 2.5s: Idle Breathing Loop (Pants updated to clearly visible light tactical slate) */
   0%, 20%, 40% {
     box-shadow:
-      /* Head / Hair */
       2px -16px #dfbe5d, 4px -16px #dfbe5d, 6px -16px #dfbe5d,
       2px -14px #fad773, 4px -14px #fad773, 6px -14px #dfbe5d,
-      /* Face */
       2px -12px #f4eae0, 4px -12px #f4eae0,
-      /* Vest / Blue Shirt */
       2px -10px #4a72a8, 4px -10px #4a72a8, 6px -10px #34527d,
       0px -8px #34527d, 2px -8px #4a72a8, 4px -8px #4a72a8, 6px -8px #34527d,
       2px -6px #34527d, 4px -6px #34527d,
-      /* UPGRADED: Highly visible lighter tactical cargo pant shades */
       2px -4px #7c8da3, 4px -4px #7c8da3,
       2px -2px #5a6b82, 4px -2px #5a6b82;
   }
@@ -912,25 +961,17 @@ section { padding: 8rem 4rem; }
       2px -3px #7c8da3, 4px -3px #7c8da3,
       2px -1px #5a6b82, 4px -1px #5a6b82;
   }
-  
-  /* 2.5s - 4.5s: Snaps flashlight out backward towards text rows */
   50%, 60%, 70%, 80% {
     box-shadow:
-      /* Head / Hair */
       2px -16px #dfbe5d, 4px -16px #dfbe5d, 6px -16px #dfbe5d,
       2px -14px #fad773, 4px -14px #fad773, 6px -14px #dfbe5d,
-      /* Face */
       2px -12px #f4eae0, 4px -12px #f4eae0,
-      /* Hand extended out holding glowing tool element (#ffffff) */
       -2px -10px #ffffff, 0px -10px #ff7643, 2px -10px #4a72a8, 4px -10px #4a72a8, 6px -10px #34527d,
       0px -8px #34527d, 2px -8px #4a72a8, 4px -8px #4a72a8, 6px -8px #34527d,
       2px -6px #34527d, 4px -6px #34527d,
-      /* UPGRADED: Highly visible lighter tactical cargo pant shades */
       2px -4px #7c8da3, 4px -4px #7c8da3,
       2px -2px #5a6b82, 4px -2px #5a6b82;
   }
-  
-  /* 4.5s - 5s: Resets tool away */
   90% {
     box-shadow:
       2px -16px #dfbe5d, 4px -16px #dfbe5d, 6px -16px #dfbe5d,
@@ -945,18 +986,15 @@ section { padding: 8rem 4rem; }
 }
 
 @keyframes flashlightBeamPatrol {
-  0%, 48%, 92%, 100% {
-    width: 0px;
-    opacity: 0;
-  }
-  52%, 88% {
-    width: 620px; /* Expands to cover full length of restored large headline font */
-    opacity: 1;
-  }
+  0%, 48%, 92%, 100% { width: 0px; opacity: 0; }
+  52%, 88% { width: 620px; opacity: 1; }
 }
 
+/* ═══════════════════════════════════════════
+    RESPONSIVE OVERRIDES
+═══════════════════════════════════════════ */
 @media (max-width: 1140px) {
-  .name-companion-leon { display: none !important; }
+  .name-companion-leon, .global-patrol-leon { display: none !important; }
 }
 
 @media (max-width: 900px) {
