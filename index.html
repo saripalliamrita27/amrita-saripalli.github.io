@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amrita Saripalli — UX Designer</title>
+  <title>Amrita Saripalli — UX Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css"> </head>
+  <link rel="stylesheet" href="style.css"> 
+</head>
 <body>
 
   <div id="cursor-dot"></div>
@@ -24,107 +25,158 @@
 
   <section id="hero">
     <p class="hero-eyebrow">UXD Experience Studio · Purdue University</p>
-    <h1 class="hero-name">Amrita<br><span>Saripalli</span></h1>
+    <!-- CONTAINER FOR NAME AND ANIMATION RENDER LAYERS -->
+    <div class="hero-name-interactive-group">
+      <h1 class="hero-name">Amrita<br><span>Saripalli</span></h1>
+      
+      <!-- PURE CSS LEON COMPANION TERMINAL -->
+      <div class="name-companion-leon"></div>
+    </div>
     <p class="hero-tagline">
-      UX Designer crafting intuitive, human-centered digital experiences — where research meets design and technology meets empathy.
+      UX Designer crafting intuitive, safe, and robust human-centered digital experiences—where tactical user research transforms complex software into strategic workflow engines.
     </p>
     <div class="hero-cta">
-      <a href="#projects" class="btn-primary">View Projects</a>
+      <a href="#projects" class="btn-primary">Explore Case Studies</a>
       <a href="#contact" class="btn-ghost">Get in Touch</a>
     </div>
-    <div class="scroll-indicator">Scroll to explore</div>
   </section>
 
   <section id="projects">
-    <p class="section-label">Work</p>
-    <h2 class="section-title">Projects</h2>
+    <p class="section-label">Selected Works</p>
+    <h2 class="section-title">Design Case Studies</h2>
     <div class="section-divider"></div>
 
+    <!-- PROJECT 1 -->
     <div class="project-entry visible" id="allied">
       <div class="project-header">
         <span class="project-number">01</span>
         <h3 class="project-title">Allied Solutions — Lending Insights Redesign</h3>
         <div class="project-meta">
-          <span><strong>Client</strong> Allied Solutions</span>
-          <span><strong>Role</strong> UX Research &amp; Design</span>
+          <span><strong>Client:</strong> Allied Solutions (Lending Insights BI Platform)</span>
+          <span><strong>Role:</strong> UX Research, Testing & Interaction Prototyping</span>
         </div>
       </div>
       <div class="project-overview">
         <div class="project-desc">
-          <p>Reimagining the custom reporting experience for Allied Solutions' Lending Insights platform by integrating AI-driven guidance and transforming a complex, unintuitive tool into one that empowers lenders.</p>
-          <a href="allied.html" class="btn-primary" style="margin-top: 1.5rem;">View Project</a>
+          <p>Reimagining user autonomy in a complex custom report generation software. By integrating transparent AI permissions thresholds and contextual data forecasting layers, we successfully lowered cognitive overload for retail banking managers.</p>
+          <a href="allied.html" class="btn-primary" style="margin-top: 1.5rem;">View End-To-End Process</a>
         </div>
         <div class="project-sidebar">
-            <img src="images/allied/hifi-6.jpg" alt="Allied Solutions Preview" style="width: 100%; border-radius: 4px; filter: brightness(0.9);">
+          <img src="images/allied/hifi-6.jpg" alt="Allied Solutions Preview" style="width: 100%; border-radius: 4px;">
         </div>
       </div>
     </div>
 
     <div class="project-divider"></div>
 
+    <!-- PROJECT 2 -->
     <div class="project-entry visible" id="innovatemap">
       <div class="project-header">
         <span class="project-number">02</span>
-        <h3 class="project-title">Innovatemap — AI Email Marketing Redesign</h3>
+        <h3 class="project-title">Innovatemap — AI Campaign Architecture Redesign</h3>
         <div class="project-meta">
-          <span><strong>Client</strong> Innovatemap × Backstroke</span>
-          <span><strong>Role</strong> UX Research &amp; Strategy</span>
+          <span><strong>Client:</strong> Innovatemap × Backstroke</span>
+          <span><strong>Role:</strong> UX Market Strategy, Concept Validation & Low-Fi Sketching</span>
         </div>
       </div>
       <div class="project-overview">
         <div class="project-desc">
-          <p>Defining the future of AI email marketing for Backstroke by shifting AI from a simple copywriting assistant to a strategic architect of entire campaigns.</p>
-          <a href="innovatemap.html" class="btn-primary" style="margin-top: 1.5rem;">View Project</a>
+          <p>Evolving AI from a simple generative text editor into a predictive campaign simulation engine. This blueprint mitigates digital marketers' primary anxieties regarding loss of brand control and data opacity.</p>
+          <a href="innovatemap.html" class="btn-primary" style="margin-top: 1.5rem;">View End-To-End Process</a>
         </div>
         <div class="project-sidebar">
-            <img src="images/innovatemap/hifi-preview.jpg" alt="Innovatemap Preview" style="width: 100%; border-radius: 4px; filter: brightness(0.9);">
+          <img src="images/innovatemap/hifi-preview.jpg" alt="Innovatemap Preview" style="width: 100%; border-radius: 4px;">
         </div>
       </div>
-      <div class="project-divider"></div>
+    </div>
 
+    <div class="project-divider"></div>
+
+    <!-- PROJECT 3 -->
     <div class="project-entry visible" id="pratigya">
       <div class="project-header">
         <span class="project-number">03</span>
-        <h3 class="project-title">Pratigya — Financial Literacy Platform</h3>
+        <h3 class="project-title">Pratigya — Financial Literacy & Sponsor Tracking Matrix</h3>
         <div class="project-meta">
-          <span><strong>Client</strong> Pratigya (Hack The Future)</span>
-          <span><strong>Role</strong> UX Designer</span>
+          <span><strong>Client:</strong> Pratigya Foundation (Hack The Future)</span>
+          <span><strong>Role:</strong> End-to-End System Wireframing & Usability Mapping</span>
         </div>
       </div>
       <div class="project-overview">
         <div class="project-desc">
-          <p>Designing an accessible, AI-driven educational platform for rural women in Jharkhand, India, empowering them with financial independence while providing administrators with vital tracking data.</p>
-          <a href="pratigya.html" class="btn-primary" style="margin-top: 1.5rem;">View Project</a>
+          <p>Co-creating a multi-layered ecosystem offering digestible learning loops for marginalized communities in Jharkhand, India, paired with real-time quantitative dashboards for administrative sponsor reporting.</p>
+          <a href="pratigya.html" class="btn-primary" style="margin-top: 1.5rem;">View End-To-End Process</a>
         </div>
         <div class="project-sidebar">
-            <img src="images/pratigya/cover.jpg" alt="Pratigya Preview" style="width: 100%; border-radius: 4px; filter: brightness(0.9);">
+          <img src="images/pratigya/cover.jpg" alt="Pratigya Preview" style="width: 100%; border-radius: 4px;">
         </div>
       </div>
     </div>
-    </div>
   </section>
 
   <section id="contact">
-      </section>
+    <div class="codec-wrapper">
+      
+      <header class="codec-hud-top">
+        <div class="hud-hardware-module">
+          <span class="hud-light-indicator"></span>
+          <p class="hud-serial">// WATER TESTED FSR5820-782-820BL</p>
+        </div>
+        <div class="hud-frequency">CH. 144.75 MAIN LINK</div>
+      </header>
 
-  <section id="contact">
-    <div class="contact-inner">
-      <p class="contact-pre">// Let's Connect</p>
-      <h2 class="contact-title">Start a Conversation</h2>
-      <p class="contact-sub">
-        I'm always open to new projects, collaborations, or a good conversation about design. Let's build something people love.
-      </p>
-      <div class="contact-links">
-        <a href="mailto:saripall@purdue.edu" class="contact-link">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
-          saripall@purdue.edu
-        </a>
-        <a href="https://www.linkedin.com/in/amrita-saripalli/" target="_blank" class="contact-link">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          LinkedIn
-        </a>
+      <div class="codec-display-matrix">
+        
+        <article class="codec-screen-panel profile-origin">
+          <header class="panel-tag">G.R.V.T. SYSTEM // VER. 2.01</header>
+          <div class="panel-screen-viewfinder">
+            <div class="vfr-scanlines"></div>
+            <div class="vfr-avatar-placeholder">
+              <p class="vfr-label">INCOMING IMAGE</p>
+            </div>
+          </div>
+          <footer class="panel-footer-identity">AMRITA SARIPALLI</footer>
+        </article>
+
+        <article class="codec-screen-panel transmission-target">
+          <header class="panel-tag">SSG SYSTEMS // RELAY LINK</header>
+          <div class="panel-screen-viewfinder">
+            <div class="vfr-scanlines"></div>
+            <div class="vfr-social-feed">
+              <p class="feed-status-text">> FREQUENCY ESTABLISHED. ACCESS CHANNELS:</p>
+              
+              <div class="communicator-channels">
+                <a href="mailto:saripall@purdue.edu" class="comms-btn">
+                  <svg class="comms-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/>
+                  </svg>
+                  <div class="comms-label-group">
+                    <span class="comms-pre">EMAIL SECURE TERMINAL</span>
+                    <span class="comms-address">saripall@purdue.edu</span>
+                  </div>
+                </a>
+
+                <a href="https://www.linkedin.com/in/amrita-saripalli/" target="_blank" class="comms-btn">
+                  <svg class="comms-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+                  </svg>
+                  <div class="comms-label-group">
+                    <span class="comms-pre">LINKEDIN CENTRAL NETWORK</span>
+                    <span class="comms-address">amrita-saripalli</span>
+                  </div>
+                </a>
+              </div>
+
+            </div>
+          </div>
+          <footer class="panel-footer-identity">OUTGOING DATA EXPEDITION</footer>
+        </article>
+
+      </div>
+
     </div>
   </section>
   
-  <script src="main.js"></script> </body>
+  <script src="main.js"></script> 
+</body>
 </html>

@@ -40,3 +40,14 @@ window.addEventListener('scroll', () => {
     nav.style.borderBottom = 'none';
   }
 });
+// ─── Retro Game Loading Screen Handler (Safe Multi-Page Version) ───
+window.addEventListener('load', () => {
+  const loader = document.getElementById('game-loader');
+  
+  // ONLY run the timer if the page actually has the loader HTML element!
+  if (loader) {
+    setTimeout(() => {
+      loader.classList.add('loaded');
+    }, 2200); 
+  }
+});
