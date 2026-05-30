@@ -16,7 +16,7 @@ document.addEventListener('mousemove', e => {
   dot.style.left  = mx + 'px';
   dot.style.top   = my + 'px';
 
-  updateLeonFacing();
+  updateLeonFlashlightAngle();
 });
 
 (function animateRing() {
@@ -33,7 +33,6 @@ const globalLeon = document.getElementById('global-teleport-leon');
 function runGlobalLeonPatrol() {
   if (!globalLeon) return;
 
-  // Fade out completely before jumping coordinates
   globalLeon.classList.remove('active-flash', 'visible-idle');
 
   setTimeout(() => {
@@ -107,7 +106,7 @@ function runGlobalLeonPatrol() {
       globalLeon.style.left = absoluteX + 'px';
       globalLeon.style.top  = absoluteY + 'px';
 
-      updateLeonFacing();
+      updateLeonFlashlightAngle();
 
       globalLeon.classList.add('visible-idle');
 
@@ -119,45 +118,62 @@ function runGlobalLeonPatrol() {
   }, 1000); 
 }
 
-function updateLeonFacing() {
+// ─── GEOMETRY FIX: Syncs Flashlight Rotation with Mirror States ───
+function updateLeonFlashlightAngle() {
   if (!globalLeon || !globalLeon.classList.contains('visible-idle')) return;
 
+  // 1. Locate Leon's center point inside the viewport bounds
   const leonRect = globalLeon.getBoundingClientRect();
-  const leonViewportX = leonRect.left + leonRect.width / 2;
+  const leonCenterX = leonRect.left + leonRect.width / 2;
+  const leonCenterY = leonRect.top + leonRect.height / 2;
 
-  if (clientX < leonViewportX) {
+  // 2. Measure spatial delta vectors to the cursor position
+  const deltaX = clientX - leonCenterX;
+  const deltaY = clientY - leonCenterY;
+
+  // 3. Convert arc tangent radians smoothly over to standard degrees
+  const radians = Math.atan2(deltaY, deltaX);
+  const degrees = radians * (180 / Math.PI);
+
+  const lightCone = globalLeon.querySelector('.beam-cone-ray');
+  
+  // 4. Handle rendering matrix states based on cursor hemisphere placement
+  if (clientX < leonCenterX) {
+    // Left Hemisphere: Flip character sprite structure horizontally
     globalLeon.style.transform = 'scale(2.5) scaleX(-1)';
+    
+    if (lightCone) {
+      // FIX: Invert the angle and add 180 degrees to cancel out the scaleX(-1) mirror flip
+      const mirroredAngle = -degrees + 180;
+      lightCone.style.transform = `rotate(${mirroredAngle}deg)`;
+    }
   } else {
+    // Right Hemisphere: Keep default right-facing layout rules intact
     globalLeon.style.transform = 'scale(2.5) scaleX(1)';
+    
+    if (lightCone) {
+      lightCone.style.transform = `rotate(${degrees}deg)`;
+    }
   }
 }
 
-// ─── Retro Game Loading Screen Handler (Safe Multi-Page Version) ───
+// Automatically manage page initialization and lifecycle loops
 window.addEventListener('load', () => {
   const loader = document.getElementById('game-loader');
   if (loader) {
     setTimeout(() => {
-      // Step 1: Hide the loading overlay mask
       loader.classList.add('loaded');
-      
-      // Step 2: DELAY FIXED - Only activate Leon's global roaming cycles after the screen is clear!
       if (globalLeon) {
         setTimeout(() => {
           runGlobalLeonPatrol(); 
           setInterval(runGlobalLeonPatrol, 6500);
-        }, 600); // 600ms matches the CSS opacity fade duration perfectly
+        }, 600);
       }
     }, 2200); 
-  } else {
-    // Fallback: If navigating a page without a loader (like index), execute immediately
-    if (globalLeon) {
-      runGlobalLeonPatrol();
-      setInterval(runGlobalLeonPatrol, 6500);
-    }
   }
 });
 
-// ─── Scroll-reveal for project entries ───
+// Scroll-reveal triggers
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -169,7 +185,7 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.project-entry').forEach(el => observer.observe(el));
 
-// ─── Nav scroll effect ───
+// Navigation visibility changes on scroll
 const nav = document.querySelector('nav');
 if (nav) {
   window.addEventListener('scroll', () => {
